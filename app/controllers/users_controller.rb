@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authenticate
 
   def index
     @users = User.all
@@ -20,4 +21,6 @@ class UsersController < ApplicationController
   def  params_user
     params.require(:user).permit(:username, :email, :firstname, :lastname)
   end
+
+  
 end

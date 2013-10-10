@@ -10,7 +10,16 @@
   <div class="container">
     <header>
     <h1>Learning Rails Blog</h1>
-    <nav></nav>
+    <nav>
+    <ul>
+      <li><%= link_to "Blog", root_path %></li>
+      <% if @current_user %>
+        <li>Signed in as <%= @current_user.username %> <%= link_to "Sign Out", session_path, method: :delete if @current_user  %></li>
+      <% else %>
+        <li><%= link_to "Sign In", new_session_path unless @current_user  %></li>
+      <% end %>
+    </ul>
+    </nav>
 
     <% flash.each do |name, message| %>
       <%= content_tag :div, message, class: name %>
