@@ -40,6 +40,7 @@ end
 gem 'unicorn'
 gem 'rails_serve_static_assets'
 gem 'asset_sync'
+gem 'newrelic_rpm'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
