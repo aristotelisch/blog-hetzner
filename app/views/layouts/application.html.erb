@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <header>
+    <h1>Learning Rails Blog</h1>
+    <nav></nav>
 
+    <% flash.each do |name, message| %>
+      <%= content_tag :div, message, class: name %>
+    <% end %>
+    </header>
 <%= yield %>
-
+</div>
 </body>
 </html>
