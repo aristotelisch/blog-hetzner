@@ -1,6 +1,8 @@
 Blog::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  #config/environments/production.rb
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
   # Code is not reloaded between requests.
   config.cache_classes = true
 

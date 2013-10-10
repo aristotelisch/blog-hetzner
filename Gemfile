@@ -39,6 +39,7 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 gem 'rails_serve_static_assets'
+gem 'asset_sync'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
