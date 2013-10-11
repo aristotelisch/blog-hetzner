@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   def authenticate
     if !signed_in?
       flash[:warning] = "Please sign in."
-      redirect_to root_path
+      redirect_to new_session_path 
     end
   end
 end
