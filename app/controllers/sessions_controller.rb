@@ -6,9 +6,14 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_email(params[:session][:email])
-    cookies.signed[:user_id] = @user.id
-    flash[:notice] = "Welcome #{@user.firstname}. You have signed in as #{@user.username} with email: #{@user.email}"
-    redirect_to articles_path
+    if @user
+      cookies.signed[:user_id] = @user.id
+      flash[:notice] = "Welcome #{@user.firstname}. You have signed in as #{@user.username} with email: #{@user.email}"
+      redirect_to articles_path
+    else
+      flash[:warning] = "Your credentials are not correct. Please try again."
+      redirect_to new_session_path
+    end
   end
 
   def destroy
