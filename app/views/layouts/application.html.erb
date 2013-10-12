@@ -22,7 +22,11 @@
     </nav>
 
     <% flash.each do |name, message| %>
-      <%= content_tag :div, message, class: name %>
+      <% if name == :notice %>
+        <%= content_tag :div, message, class: 'alert alert-success' %>
+      <% elsif name == :warning %>
+        <%= content_tag :div, message, class: 'alert alert-warning' %>
+      <% end %>
     <% end %>
     </header>
 <%= yield %>
