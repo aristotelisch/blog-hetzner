@@ -1,6 +1,18 @@
 <h1>Sign in</h1>
-<%= form_for(:session, url: session_path) do |form| %>
-   <%= form.label :email %>
-   <%= form.text_field :email %>
-   <%= form.submit "Sign In" %>
-<% end %>
+<div class="col-lg-12 container">
+  <%= form_for(:session, url: session_path, class: "form-horizontal", role: "form") do |form| %>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-lg-1">
+          <%= form.label :email, class: "control-label" %>
+        </div>
+        <div class="col-lg-6">
+          <%= form.email_field :email , class: "form-control", placeholder: "email" %>
+        </div>
+        <div class="col-lg-2">
+          <%= form.submit "Sign In", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

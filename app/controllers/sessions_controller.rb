@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to articles_path
     else
       flash[:warning] = "Your credentials are not correct. Please try again."
-      redirect_to new_session_path
+      redirect_to login_path
     end
   end
 
