@@ -7,8 +7,10 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @article.body %>
+  <%== @article.body %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<% if signed_in? %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
+<% end %>
