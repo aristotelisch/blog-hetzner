@@ -15,7 +15,7 @@
       </header>
       <%= raw article.body %>
       <footer>
-        <p><small>Author: <%= article.user.email if !article.user.nil? %></small></p>
+        <p><small>Author: <%= article.user.username if !article.user.username.nil? %></small></p>
       </footer>
     </article>
   </div>
