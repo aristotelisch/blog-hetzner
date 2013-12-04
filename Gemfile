@@ -39,6 +39,7 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 gem 'rails_serve_static_assets'
+gem 'unf'
 gem 'asset_sync'
 gem 'newrelic_rpm'
 gem "friendly_id", "~> 5.0.1"
