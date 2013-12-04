@@ -2,7 +2,7 @@ ruby "2.0.0"
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -41,6 +41,7 @@ gem 'unicorn'
 gem 'rails_serve_static_assets'
 gem 'asset_sync'
 gem 'newrelic_rpm'
+gem "friendly_id", "~> 5.0.1"
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

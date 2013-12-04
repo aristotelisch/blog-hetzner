@@ -4,7 +4,7 @@
       <article>
       <header>
         <h1><%= article.title %></h1>
-        <p>Published: <time pubdate="pubdate"><%= article.updated_at.to_formatted_s(:short) %></time></p>
+        <p>Published: <time pubdate="pubdate"><%= article.updated_at.to_formatted_s(:short) %></time> by <%= article.user.username %></p>
         <p>
           <% if current_user %>
             <%= link_to 'Show ', article %>
@@ -15,7 +15,6 @@
       </header>
       <%= raw article.body %>
       <footer>
-        <p><small>Author: <%= article.user.username if !article.user.username.nil? %></small></p>
       </footer>
     </article>
   </div>
