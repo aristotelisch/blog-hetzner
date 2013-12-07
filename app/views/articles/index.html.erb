@@ -3,11 +3,10 @@
     <div class="col-lg-8 offset-lg-4">
       <article>
       <header>
-        <h1><%= article.title %></h1>
+        <h1><%= link_to article.title, article %></h1>
         <p>Published: <time pubdate="pubdate"><%= article.updated_at.to_formatted_s(:short) %></time> by <%= article.user.username %></p>
         <p>
           <% if current_user %>
-            <%= link_to 'Show ', article %>
             <%= link_to 'Edit ', edit_article_path(article) %>
             <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
