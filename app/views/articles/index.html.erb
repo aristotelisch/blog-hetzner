@@ -1,6 +1,6 @@
 <% @articles.each do |article| %>
   <div class="row">
-    <div class="col-lg-8 offset-lg-4">
+    <div class="col-md-12">
       <article>
       <header>
         <h1><%= link_to article.title, article %></h1>
@@ -16,7 +16,7 @@
       <footer>
       </footer>
     </article>
-  </div>
+</div>
 </div>
 <% end %>
 <%= link_to 'New Article', new_article_path, class: "btn btn-primary" if current_user %>

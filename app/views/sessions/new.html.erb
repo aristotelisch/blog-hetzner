@@ -4,13 +4,13 @@
   <%= form_for(:session, url: session_path, html: { class: "form-horizontal", role: "form" }) do |form| %>
     <div class="row">
       <div class="form-group">
-        <div class="col-lg-1">
+        <div class="col-md-1">
           <%= form.label :email, class: "control-label" %>
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6">
           <%= form.email_field :email , class: "form-control", placeholder: "email" %>
         </div>
-        <div class="col-lg-2">
+        <div class="col-md-2">
           <%= form.submit "Sign In", class: "btn btn-primary" %>
         </div>
       </div>

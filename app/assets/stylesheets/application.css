@@ -32,6 +32,10 @@ body {
   padding: 0 0 60px;
 }
 
+.container {
+  max-width: 800px !important;
+}
+
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
