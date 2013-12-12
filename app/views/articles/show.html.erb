@@ -6,7 +6,7 @@
 </h1>
 
 <p>
-  <%== @article.body %>
+  <%= markdown(@article.body) %>
 </p>
 
 <% if signed_in? %>

@@ -83,6 +83,10 @@ GEM
       rake (>= 0.8.1)
     pg (0.17.0)
     polyglot (0.3.3)
+    posix-spawn (0.3.8)
+    pygments.rb (0.5.4)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -107,6 +111,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     ruby-hmac (0.4.0)
     sass (3.2.12)
     sass-rails (4.0.1)
@@ -141,6 +146,7 @@ GEM
     unf (0.1.3)
       unf_ext
     unf_ext (0.0.6)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -154,9 +160,11 @@ DEPENDENCIES
   newrelic_rpm
   passenger
   pg
+  pygments.rb
   rails (= 4.0.2)
   rails_12factor
   rails_serve_static_assets
+  redcarpet
   sass-rails (~> 4.0.0)
   sdoc
   turbolinks
