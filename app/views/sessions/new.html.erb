@@ -1,20 +1,37 @@
-<%= content_for :page_title, "Sign in" %>
-<h1>Sign in</h1>
-<br />
-<div class="col-lg-7 offset-lg-5 container">
+<div class="col-md-6 col-md-offset-2">
+  <%= content_for :page_title, "Sign in" %>
   <%= form_for(:session, url: session_path, html: { class: "form-horizontal", role: "form" }) do |form| %>
     <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+      <h1>Sign in</h1>
+    </div>
+    </div>
+    <div class="row">
       <div class="form-group">
-        <div class="col-md-1">
+        <div class="col-md-3">
           <%= form.label :email, class: "control-label" %>
         </div>
-        <div class="col-md-6">
-          <%= form.email_field :email , class: "form-control", placeholder: "email" %>
-        </div>
-        <div class="col-md-2">
-          <%= form.submit "Sign In", class: "btn btn-primary" %>
+        <div class="col-md-9">
+          <%= form.email_field :email , class: "form-control", placeholder: "email", autofocus: true%>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-md-3">
+          <%= form.label :password, class: "control-label" %>
+        </div>
+        <div class="col-md-9">
+          <%= form.password_field :password , class: "form-control"%>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+      <div class="col-md-9 col-md-offset-3">
+        <%= form.submit "Sign In", class: "btn btn-primary col-md-12" %>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
