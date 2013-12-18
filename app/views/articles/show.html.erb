@@ -1,9 +1,9 @@
 <%= content_for :page_title, @article.title %>
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= @article.title %>
-</h1>
+<h1><%= @article.title %></h1>
+<p class="small">Published: <time pubdate="pubdate"><%= @article.updated_at.to_formatted_s(:short) %></time> by <%= @article.user.username %></p>
+
 
 <p>
   <%= markdown(@article.body) %>
