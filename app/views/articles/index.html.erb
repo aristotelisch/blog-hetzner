@@ -12,7 +12,8 @@
           <% end %>
         </p>
       </header>
-      <%= markdown  article.body %>
+      <%= markdown article.excerpt %>
+      <%= link_to "more", article, class: "pull-right" %>
       <footer>
       </footer>
     </article>
