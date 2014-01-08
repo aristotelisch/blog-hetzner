@@ -24,3 +24,14 @@ gem "friendly_id", "~> 5.0.1"
 gem "redcarpet"
 gem "pygments.rb"
 gem "foreman"
+
+group :development do
+  gem 'thin'
+  gem 'guard-livereload'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rails'
+  # gem 'guard-rspec'
+  # gem 'guard-cucumber'
+  gem 'terminal-notifier-guard'
+end
