@@ -54,12 +54,17 @@
 
     <% flash.each do |name, message| %>
       <% if name == :notice %>
-        <%= content_tag :div, message, class: 'alert alert-success alert-dismissable' %>
+        <%= content_tag(:div, class: 'alert alert-success alert-dismissable') do %>
+          <%= message %>
+          <%= content_tag(:button, raw("&times;"), { "class" => 'close', "data-dismiss" => "alert" })  %>
+        <% end %>
       <% elsif name == :warning %>
-        <%= content_tag :div, message, class: 'alert alert-warning alert-dismissable' %>
+        <%= content_tag(:div, class: 'alert alert-warning  alert-dismissable') do %>
+          <%= message %>
+          <%= content_tag(:button, raw("&times;"), { "class" => 'close', "data-dismiss" => "alert" })  %>
+        <% end %>
       <% end %>
-    <% end %>
-
+    <% end %> 
     <%= yield %>
 
   </div>
