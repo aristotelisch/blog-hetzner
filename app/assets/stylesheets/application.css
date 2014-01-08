@@ -19,6 +19,11 @@ html,
 body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
+  font-family: Lato, sans-serif!important;
+}
+h1, h2, h3, h4, h5, h6 {
+
+  font-family: Lato, sant-serif!important;
 }
 
 /* Wrapper for page content to push down footer */
