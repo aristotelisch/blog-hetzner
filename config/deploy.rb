@@ -9,8 +9,8 @@ set :application, "happybit.eu"
 # set :rvm_ruby_string, 'default'
 # set :rvm_type, :user
 #set :repository,  "~/#{application}.git"
-set :repository,  "git@bitbucket.org:aristotelis_ch/vblog.git"
-ser :repository, "git@github.com:aristotelisch/blog.git"
+# set :repository,  "git@bitbucket.org:aristotelis_ch/vblog.git"
+set :repository, "git@github.com:aristotelisch/blog.git"
 # Uses local instead of remote server keys, good for github ssh key deploy.
 # ssh_options[:forward_agent] = true
 set :deploy_via, :remote_cache
