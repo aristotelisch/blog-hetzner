@@ -15,7 +15,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'passenger'
+gem 'unicorn'
+# gem 'passenger'
 gem 'rails_serve_static_assets'
 gem 'unf'
 gem 'asset_sync'
