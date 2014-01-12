@@ -1,10 +1,13 @@
-ruby "2.0.0"
+ruby "2.1.0"
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
-gem 'pg'
-gem 'rails_12factor'
-gem 'sass-rails', '~> 4.0.0'
+
+# gem 'pg'
+group :production do
+  gem 'mysql2'
+end
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -15,8 +18,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'unicorn'
-# gem 'passenger'
+# gem 'unicorn'
+gem 'passenger'
 gem 'rails_serve_static_assets'
 gem 'unf'
 gem 'asset_sync'
@@ -27,6 +30,7 @@ gem "pygments.rb"
 gem "foreman"
 
 group :development do
+  gem 'pg'
   gem 'thin'
   gem 'guard-livereload'
   gem 'guard'
@@ -36,3 +40,7 @@ group :development do
   # gem 'guard-cucumber'
   gem 'terminal-notifier-guard'
 end
+
+gem 'capistrano', '~> 2.15', group: :development
+gem 'capistrano-rails'
+gem 'rvm-capistrano'
