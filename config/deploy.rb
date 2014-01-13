@@ -20,7 +20,7 @@ set :use_sudo, false
 set :user, "deploy"
 set :deploy_to, "/home/deploy/apps/#{application}"
 set :rails_env, "production"
-set :branch, "vps-deploy"
+set :branch, "master"
 set :keep_releases, 5
 default_run_options[:pty] = true
 ssh_options[:port] = 56
