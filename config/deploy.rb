@@ -1,7 +1,7 @@
 require 'rvm/capistrano'
 require 'bundler/capistrano'
 
-ssh_options[:forward_agent] = false
+ssh_options[:forward_agent] = true
 
 set :server_name, "lynch.happybit.eu"
 #set :shared_path, "~"
@@ -41,8 +41,8 @@ namespace :deploy do
 end
 
 before "deploy:setup", "db:configure"
-after  "db:configure", "db:create"
 after  "deploy:update_code", "db:symlink"
+after  "deploy:symlink", "db:create"
 
 namespace :db do
   desc "Create database yaml in shared path"
