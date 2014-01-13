@@ -25,7 +25,7 @@ gem 'newrelic_rpm'
 gem "friendly_id", "~> 5.0.1"
 gem "redcarpet"
 gem "pygments.rb"
-gem "foreman"
+# gem "foreman"
 
 group :development do
   gem 'thin'
