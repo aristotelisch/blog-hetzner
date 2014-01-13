@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # gem 'pg'
-  gem 'mysql2'
+gem 'mysql2'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -17,8 +17,8 @@ group :doc do
 end
 
 # gem 'unicorn'
-gem 'passenger'
-gem 'rails_serve_static_assets'
+# gem 'passenger'
+# gem 'rails_serve_static_assets'
 gem 'unf'
 gem 'asset_sync'
 gem 'newrelic_rpm'
