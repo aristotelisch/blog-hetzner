@@ -130,7 +130,6 @@ GEM
       daemon_controller (>= 1.1.0)
       rack
       rake (>= 0.8.1)
-    pg (0.17.0)
     polyglot (0.3.3)
     posix-spawn (0.3.8)
     pry (0.9.12.4)
@@ -223,7 +222,6 @@ DEPENDENCIES
   mysql2
   newrelic_rpm
   passenger
-  pg
   pygments.rb
   rails (= 4.0.2)
   rails_serve_static_assets
