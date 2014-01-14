@@ -2,7 +2,7 @@ Blog::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   #config/environments/production.rb
-  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+  # config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -57,7 +57,7 @@ Blog::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-   config.action_controller.asset_host = "d1gp42gwc1fu63.cloudfront.net"
+   # config.action_controller.asset_host = "d1gp42gwc1fu63.cloudfront.net"
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.

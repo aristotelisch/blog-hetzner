@@ -3,14 +3,14 @@ require 'bundler/capistrano'
 
 ssh_options[:forward_agent] = true
 
+set :nginx_path, "/opt/nginx"
 set :server_name, "lynch.happybit.eu"
 #set :shared_path, "~"
 set :application, "happybit.eu"
 # set :rvm_ruby_string, 'default'
 # set :rvm_type, :user
 #set :repository,  "~/#{application}.git"
-# set :repository,  "git@bitbucket.org:aristotelis_ch/vblog.git"
-set :repository, "git@github.com:aristotelisch/blog.git"
+set :repository,  "git@github.com:aristotelisch/blog.git"
 # Uses local instead of remote server keys, good for github ssh key deploy.
 # ssh_options[:forward_agent] = true
 set :deploy_via, :remote_cache
@@ -42,7 +42,9 @@ end
 
 before "deploy:setup", "db:configure"
 after  "deploy:update_code", "db:symlink"
-after  "deploy:symlink", "db:create"
+after  "db:symlink", "db:create"
+# after 'deploy:setup', 'nginx:write_nginx_conf'
+
 
 namespace :db do
   desc "Create database yaml in shared path"
@@ -88,6 +90,27 @@ namespace :db do
 
   desc "Create the database if it does not exist"
   task :create do
-    run "cd #{current_path} && bundle exec rake db:create"
+    run "cd #{latest_release} && bundle exec rake db:create RAILS_ENV=production"
   end
 end
+
+namespace :nginx do
+
+  task :write_nginx_conf, :roles => :app do
+    nginx_conf = <<-EOF
+      # the nginx server instance
+      server {
+       listen       80;
+       server_name  #{application};
+       root #{current_path}/public;
+       passenger_enabled on;
+      }
+    EOF
+
+    put nginx_conf, "/tmp/#{application}.conf"
+    run "#{sudo} mv /tmp/#{application}.conf #{nginx_path}/sites-available"
+    run "#{sudo} ln -s #{nginx_path}/sites-available/#{application}.conf #{nginx_path}/sites-enabled/#{application}.conf"
+  end
+end
+
+
