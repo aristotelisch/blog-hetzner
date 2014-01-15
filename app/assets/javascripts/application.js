@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require_tree .
+
+
+$(".alert").alert();
+window.setTimeout(function() { $(".alert").fadeTo(500,100).slideUp(500, function() { $(this).remove() })}, 2000);
