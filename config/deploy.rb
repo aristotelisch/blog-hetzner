@@ -6,7 +6,7 @@ ssh_options[:forward_agent] = true
 set :nginx_path, "/opt/nginx"
 set :server_name, "lynch.happybit.eu"
 #set :shared_path, "~"
-set :application, "happybit.eu"
+set :application, "happybit_eu"
 # set :rvm_ruby_string, 'default'
 # set :rvm_type, :user
 #set :repository,  "~/#{application}.git"
@@ -41,7 +41,9 @@ namespace :deploy do
 end
 
 before "deploy:setup", "db:configure"
+# after  "deploy:update_code", "db:symlink"
 after  "deploy:update_code", "db:symlink"
+before "deploy:assets:precompile", "db:symlink"
 after  "db:symlink", "db:create"
 # after 'deploy:setup', 'nginx:write_nginx_conf'
 
@@ -101,7 +103,7 @@ namespace :nginx do
       # the nginx server instance
       server {
        listen       80;
-       server_name  #{application};
+       server_name  a.happybit.eu happybit.eu;
        root #{current_path}/public;
        passenger_enabled on;
       }
