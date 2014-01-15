@@ -1,5 +1,5 @@
 Blog::Application.routes.draw do
-  root to: redirect("articles")
+  root "articles#index"
   resources :articles
   get "/login" => "sessions#new", as: :login 
   delete "/logout" => "sessions#destroy", as: :logout

@@ -29,6 +29,7 @@ gem "pygments.rb"
 # gem "foreman"
 
 group :development do
+  gem 'sqlite3'
   gem 'thin'
   gem 'guard-livereload'
   gem 'guard'
