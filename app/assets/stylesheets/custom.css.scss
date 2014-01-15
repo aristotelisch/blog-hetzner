@@ -4,3 +4,8 @@ h1 > a {
 .nav li > span {
   color: lightgrey;
 }
+
+pre {
+  overflow: auto;
+  word-wrap: normal;
+}
