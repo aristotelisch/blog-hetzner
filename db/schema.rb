@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20131221153549) do
     t.text     "excerpt"
   end
 
-  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
-  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
