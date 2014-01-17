@@ -20,4 +20,11 @@ pre {
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(font-path('glyphicons-halflings-regular.eot'));
+  src: url(font-path('glyphicons-halflings-regular.eot') + '?#iefix') format('embedded-opentype'), 
+  url(font-path('glyphicons-halflings-regular.woff')) format('woff'), 
+  url(font-path('glyphicons-halflings-regular.ttf')) format('truetype'), 
+  url(font-path('glyphicons-halflings-regular.svg') + '#glyphicons-halflingsregular') format('svg');
+}
