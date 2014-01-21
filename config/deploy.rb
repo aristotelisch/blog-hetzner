@@ -44,6 +44,7 @@ before "deploy:setup", "db:configure"
 # after  "deploy:update_code", "db:symlink"
 after  "deploy:update_code", "db:symlink"
 before "deploy:assets:precompile", "db:symlink"
+after  "db:symlink", "db:symlink_application_yml"
 after  "db:symlink", "db:create"
 # after 'deploy:setup', 'nginx:write_nginx_conf'
 
@@ -88,6 +89,11 @@ namespace :db do
   desc "Make symlink for database yaml"
   task :symlink do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+  end
+
+  desc "Make symlink for application yaml"
+  task :symlink_application_yml do
+    run "ln -nfs #{shared_path}/config/application.yml #{latest_release}/config/application.yml"
   end
 
   desc "Create the database if it does not exist"
