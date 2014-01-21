@@ -26,6 +26,7 @@ gem 'unf'
 gem "friendly_id", "~> 5.0.1"
 gem "redcarpet"
 gem "pygments.rb"
+gem "figaro"
 # gem "foreman"
 
 group :development do
