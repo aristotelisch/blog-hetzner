@@ -3,6 +3,7 @@ Blog::Application.routes.draw do
   resources :articles
   get "/login" => "sessions#new", as: :login 
   delete "/logout" => "sessions#destroy", as: :logout
+  get "/about" => "high_voltage/pages#show", id: "about"
   resources :users, only: [:index, :new, :create]
   resource :session, only: [:new, :create, :destroy]
 end
