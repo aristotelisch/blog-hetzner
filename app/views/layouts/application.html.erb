@@ -21,57 +21,31 @@
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <!-- <li class="dropdown"> -->
-                <!--   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a> -->
-                <!-- <ul class="dropdown-menu"> -->
-                  <!--   <li><a href="#">Action</a></li> -->
-                  <!--   <li><a href="#">Another action</a></li> -->
-                  <!--   <li><a href="#">Something else here</a></li> -->
-                  <!--   <li class="divider"></li> -->
-                  <!--   <li class="dropdown-header">Nav header</li> -->
-                  <!--   <li><a href="#">Separated link</a></li> -->
-                  <!--   <li><a href="#">One more separated link</a></li> -->
-                  <!-- </ul> -->
-              </li>
-              <li><%= link_to 'New Article', new_article_path if current_user %></li>
-              <li><!-- <a href="#about">About</a> --></li>
-              <li><!-- <a href="#contact">Contact</a> --></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <% if current_user %>
-                <li><span class="in-nav">Signed in as <%= current_user.username %></span></li> 
-                <li><%= link_to "Sign Out", logout_path, method: :delete if current_user  %></li>
-              <% else %>
-                <li><%= link_to "Sign In", login_path, :'data-toggle' => "tooltip", :'title' => "Sign in with your email"  unless current_user   %></li>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+            </li>
+            <li><%= link_to 'New Article', new_article_path if current_user %></li>
+            <li><!-- <a href="#about">About</a> --></li>
+            <li><!-- <a href="#contact">Contact</a> --></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+              <li><span class="in-nav">Signed in as <%= current_user.username %></span></li>
+              <li><%= link_to "Sign Out", logout_path, method: :delete if current_user  %></li>
+            <% else %>
+              <li><%= link_to "Sign In", login_path, :'data-toggle' => "tooltip", :'title' => "Sign in with your email"  unless current_user   %></li>
+            <% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-      <div class="container">
-
-
-    <% flash.each do |name, message| %>
-      <% if name == :notice %>
-        <%= content_tag(:div, class: 'alert alert-success alert-dismissable') do %>
-          <%= message %>
-          <%= content_tag(:button, raw("&times;"), { "class" => 'close', "data-dismiss" => "alert" })  %>
-        <% end %>
-      <% elsif name == :warning %>
-        <%= content_tag(:div, class: 'alert alert-warning  alert-dismissable') do %>
-          <%= message %>
-          <%= content_tag(:button, raw("&times;"), { "class" => 'close', "data-dismiss" => "alert" })  %>
-        <% end %>
-      <% end %>
-    <% end %> 
-    <%= yield %>
-
-  </div>
-</div>
-<div id="footer">
-  <div class="container">
-    <p class="text-muted credit">Author: Aristotelis Christou</p>
-  </div>
-</div>
+    </div>
+    <div class="container">
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
+    </div>
+  </div> <!--/#wrap -->
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted credit">Author: Aristotelis Christou</p>
+    </div>
+  </div><!-- /#footer -->
 </body>
 </html>
