@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.4'
 
-# gem 'pg'
 gem 'mysql2'
 
 gem 'uglifier', '>= 1.3.0'
@@ -18,18 +17,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# gem 'unicorn'
-# gem 'passenger'
-# gem 'rails_serve_static_assets'
 gem 'unf'
-# gem 'asset_sync'
-# gem 'newrelic_rpm'
 gem "friendly_id", "~> 5.0.1"
 gem "redcarpet"
 gem "pygments.rb"
 gem "figaro"
 gem "high_voltage"
-# gem "foreman"
 
 group :development do
   gem 'thin'
@@ -37,11 +30,26 @@ group :development do
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rails'
-  # gem 'guard-rspec'
+  gem 'guard-rspec'
   # gem 'guard-cucumber'
   gem 'terminal-notifier-guard'
+  gem 'better_errors'
+  gem "binding_of_caller"
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
 
 gem 'capistrano', '~> 2.15', group: :development
 gem 'capistrano-rails'
 gem 'rvm-capistrano'
+# gem 'unicorn'
+# gem 'passenger'
+# gem 'rails_serve_static_assets'
+# gem 'asset_sync'
+# gem 'newrelic_rpm'
+# gem "foreman"
+# gem 'pg'
