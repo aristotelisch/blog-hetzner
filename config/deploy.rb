@@ -48,7 +48,7 @@ before "deploy:setup", "db:configure"
 after  "deploy:update_code", "db:symlink"
 before "deploy:assets:precompile", "db:symlink"
 after  "db:symlink", "db:upload_application_yml"
-after  "db:symlink"#, "db:create"
+after  "db:symlink", "db:create"
 # after 'deploy:setup', 'nginx:write_nginx_conf'
 
 

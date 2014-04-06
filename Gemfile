@@ -25,23 +25,26 @@ gem "figaro"
 gem "high_voltage"
 
 group :development do
+  gem 'spring'
+  gem 'guard-spring'
   gem 'thin'
-  gem 'guard-livereload'
   gem 'guard'
-  gem 'guard-bundler'
   gem 'guard-rails'
+  gem 'guard-bundler'
+  gem 'guard-livereload'
   gem 'guard-rspec'
-  # gem 'guard-cucumber'
+#   gem 'guard-cucumber'
   gem 'terminal-notifier-guard'
   gem 'better_errors'
   gem "binding_of_caller"
+  gem 'foreman'
 end
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+#   gem 'passenger'
 end
-
 
 gem 'capistrano', '~> 2.15', group: :development
 gem 'capistrano-rails'
