@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'sass-rails'
 gem 'newrelic_rpm'
+gem 'bcrypt'
 
 group :doc do
   gem 'sdoc', require: false
