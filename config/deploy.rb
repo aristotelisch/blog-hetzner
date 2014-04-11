@@ -32,7 +32,7 @@ after "deploy:restart", "deploy:cleanup"
 
 role :web,  "slash.happybit.eu" #"lynch.happybit.eu"
 role :app, "slash.happybit.eu"  #"lynch.happybit.eu"
-# role :db,  "#{database_host}", :primary => true # This is where Rails migrations will run
+role :db,  "slash.happybit.eu", :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
@@ -44,12 +44,11 @@ namespace :deploy do
 end
 
 before "deploy:setup", "db:configure"
-# after  "deploy:update_code", "db:symlink"
+after  "db:configure", "admin:upload_application.yml"
 after  "deploy:update_code", "db:symlink"
 before "deploy:assets:precompile", "db:symlink"
-after  "db:symlink", "db:upload_application_yml"
+after  "db:symlink", "db:symlink_application_yml"
 after  "db:symlink", "db:create"
-# after 'deploy:setup', 'nginx:write_nginx_conf'
 
 
 namespace :db do
@@ -108,11 +107,11 @@ namespace :db do
     run "cd #{latest_release} && bundle exec rake db:migrate RAILS_ENV=production"
   end
 
-  desc "Upload application.yml with enviroment variables"
-  task :upload_application_yml do
-    upload(File.expand_path('../application.yml', __FILE__), "#{shared_path}/config/application.yml")
+  desc "Symlink application.yml"
+  task :symlink_application_yml do
     run "ln -nfs #{shared_path}/config/application.yml #{latest_release}/config/application.yml"
   end
+
 end
 
 namespace :nginx do
@@ -121,7 +120,7 @@ namespace :nginx do
       # the nginx server instance
       server {
        listen       80;
-       server_name  happybit.eu php.happybit.eu;
+       server_name  happybit.eu;
        root #{current_path}/public;
        passenger_enabled on;
       }
@@ -147,6 +146,12 @@ namespace :admin do
   desc "Check Uptime"
   task :uptime do
     run "uptime"
+  end
+
+  desc "Upload application.yml with enviroment variables"
+  task :upload_application_yml do
+    upload(File.expand_path('../application.yml', __FILE__), "#{shared_path}/config/application.yml")
+    run "ln -nfs #{shared_path}/config/application.yml #{latest_release}/config/application.yml"
   end
 end
 
