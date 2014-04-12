@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'sass-rails'
 gem 'newrelic_rpm'
 gem 'bcrypt'
+gem 'redis-session-store'
 
 group :doc do
   gem 'sdoc', require: false
