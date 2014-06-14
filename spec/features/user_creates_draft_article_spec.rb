@@ -12,13 +12,13 @@ feature "Create draft articles" do
   #     Then I should see 'make draft'
   #
   before do
-    @user = User.create(username: 'testuser', email: 'testuser@example.com', password: 'secret', password_confirmation: 'secret')
-    @article = user.articles.create(title: 'A draft article', body: 'draft body content')
+    user = User.create(username: 'testuser', email: 'testuser@example.com', password: 'secret', password_confirmation: 'secret')
+    article = user.articles.create(title: 'A draft article', body: 'draft body content')
     visit login_path
     fill_in :email, with: "testuser@example.com"
     fill_in 'session_password', with: "secret"
     click_button 'Sign In'
-    visit article_path(@article.id)
+    visit article_path(article.id)
   end
 
   # scenario "I should see 'Make Draft' on edit article page" do
