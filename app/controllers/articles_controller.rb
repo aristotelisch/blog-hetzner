@@ -6,7 +6,11 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     current_user
-    @articles = Article.all
+    if signed_in?
+      @articles = Article.all
+    else
+      @articles = Article.where("draft = false")
+    end
   end
 
   # GET /articles/1
@@ -43,9 +47,10 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    logger.debug "params[:draft_button]= #{params[:draft_button]}"
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to edit_article_path(@article), notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -72,6 +77,12 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :body, :user_id)
+        article = params.require(:article).permit(:title, :body, :user_id)
+      if params[:draft_button]
+        article[:draft] = true
+      else
+        article[:draft] = false
+      end
+      return article
     end
 end
