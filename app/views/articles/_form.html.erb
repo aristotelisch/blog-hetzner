@@ -22,7 +22,7 @@
   <%= f.hidden_field :user_id, { :value => @article.user_id } %>
   <div class="actions">
     <%= f.submit "Publish", class: "btn btn-primary" %>
-    <%= f.submit "Make Draft", name: "draft_button", class: "btn btn-secondary" %>
+    <%= f.submit "Make Draft", name: :draft_button, class: "btn btn-secondary" %>
 
     <%= link_to 'Back', articles_path, class: 'btn btn-default'  %>
   </div>
