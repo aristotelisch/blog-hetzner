@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407002223) do
+ActiveRecord::Schema.define(version: 20140614044009) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20140407002223) do
     t.integer  "user_id"
     t.string   "slug"
     t.text     "excerpt"
+    t.boolean  "draft"
   end
 
+  add_index "articles", ["draft"], name: "index_articles_on_draft", using: :btree
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 

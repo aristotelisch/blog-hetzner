@@ -39,7 +39,12 @@ group :development do
   gem 'terminal-notifier-guard'
   gem 'better_errors'
   gem "binding_of_caller"
+  gem 'meta_request'
   gem 'foreman'
+end
+
+group :test do
+  gem 'launchy'
 end
 
 group :development, :test do
