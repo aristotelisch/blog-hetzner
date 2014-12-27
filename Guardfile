@@ -23,10 +23,27 @@ clearing :on
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
+# Usage:
+#     guard :foreman, <options hash>
+#
+# Possible options:
+# * :concurreny - how many of each type of process you would like to run (default is, sensibly, one of each)
+# * :env - one or more .env files to load
+# * :procfile - an alternate Procfile to use (default is Procfile)
+# * :port - an alternate port to use (default is 5000)
+# * :root - an alternate application root
+
 guard :bundler do
   watch('Gemfile')
   # Uncomment next line if your Gemfile contains the `gemspec' command.
   # watch(/^.+\.gemspec/)
+end
+
+guard :foreman do
+  # Rails example - Watch controllers, models, helpers, lib, and config files
+  watch( /^app\/(controllers|models|helpers)\/.+\.rb$/ )
+  watch( /^lib\/.+\.rb$/ )
+  watch( /^config\/*/ )
 end
 
 guard 'rails', cmd: 'bin/rails s' do
@@ -74,4 +91,5 @@ guard :rspec, cmd: 'bin/rspec' do
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
+
 

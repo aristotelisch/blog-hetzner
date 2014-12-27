@@ -1,2 +1,1 @@
-web: bundle exec passenger start -p $PORT
-guard: bundle exec guard
+redis: redis-server /usr/local/etc/redis.conf
