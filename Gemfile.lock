@@ -93,6 +93,9 @@ GEM
     guard-bundler (2.0.0)
       bundler (~> 1.0)
       guard (~> 2.2)
+    guard-foreman (0.0.4)
+      guard (~> 2.6)
+      spoon (~> 0.0, >= 0.0.4)
     guard-livereload (2.3.1)
       em-websocket (~> 0.5)
       guard (~> 2.0)
@@ -102,6 +105,8 @@ GEM
     guard-rspec (4.3.1)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
+    haml (4.0.6)
+      tilt
     high_voltage (2.2.1)
     highline (1.6.21)
     hike (1.2.3)
@@ -216,6 +221,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
+    spoon (0.0.4)
+      ffi
     spring (1.2.0)
     spring-commands-rspec (1.0.2)
       spring (>= 0.9.1)
@@ -269,9 +276,11 @@ DEPENDENCIES
   friendly_id (~> 5.0.1)
   guard
   guard-bundler
+  guard-foreman
   guard-livereload
   guard-rails
   guard-rspec
+  haml
   high_voltage
   jbuilder (~> 1.2)
   jquery-rails

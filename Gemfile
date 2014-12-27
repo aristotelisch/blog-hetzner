@@ -5,6 +5,8 @@ gem 'rails', '4.1.7'
 
 gem 'mysql2'
 
+gem 'haml'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -34,6 +36,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'guard-foreman'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'spring-commands-rspec'
