@@ -27,8 +27,19 @@ gem "figaro"
 gem "high_voltage"
 
 group :development do
+end
+
+group :test do
+  gem 'launchy'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'spring-commands-rspec'
+  gem 'terminal-notifier'
+  gem 'rb-fsevent'
   gem 'spring'
-  gem 'guard-spring'
   gem 'thin'
   gem 'guard'
   gem 'guard-rails'
@@ -41,15 +52,6 @@ group :development do
   gem "binding_of_caller"
   gem 'meta_request'
   gem 'foreman'
-end
-
-group :test do
-  gem 'launchy'
-end
-
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara'
 #   gem 'passenger'
 end
 
