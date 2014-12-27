@@ -24,14 +24,15 @@ module ApplicationHelper
   # Δημιούργησε τον τιτλο.
   # Αν δεν υπάρχει δυναμικός τιτλος εμφάνισε μόνο τον τιτλο του blog
   # Αν υπάρχει δυναμικός τίτλος εμφάνισε τον τιτλο του blog και τον δυναμικό
-  def make_title(page_title)
+  def title(page_title)
     default_title = "Happybit.eu Blog"
 
     if page_title.empty?
-      default_title
+      title = default_title
     else
-      default_title + " | " + page_title
+      title = page_title.to_s + " | " + default_title
     end
-  end
 
+    content_for :page_title, title
+  end
 end
