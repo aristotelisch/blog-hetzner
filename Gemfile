@@ -17,6 +17,9 @@ gem 'newrelic_rpm'
 gem 'bcrypt'
 gem 'redis-session-store'
 
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 group :doc do
   gem 'sdoc', require: false
 end

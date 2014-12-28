@@ -68,12 +68,27 @@ GEM
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
+    elasticsearch (1.0.6)
+      elasticsearch-api (= 1.0.6)
+      elasticsearch-transport (= 1.0.6)
+    elasticsearch-api (1.0.6)
+      multi_json
+    elasticsearch-model (0.1.6)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.6)
+    elasticsearch-transport (1.0.6)
+      faraday
+      multi_json
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.2)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
     figaro (1.0.0)
       thor (~> 0.14)
@@ -107,6 +122,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     haml (4.0.6)
       tilt
+    hashie (3.3.2)
     high_voltage (2.2.1)
     highline (1.6.21)
     hike (1.2.3)
@@ -138,6 +154,7 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.2)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
     mysql2 (0.3.16)
     nenv (0.1.1)
     net-scp (1.2.1)
@@ -271,6 +288,8 @@ DEPENDENCIES
   capistrano-rails
   capybara
   coffee-rails (~> 4.0.0)
+  elasticsearch-model
+  elasticsearch-rails
   figaro
   foreman
   friendly_id (~> 5.0.1)

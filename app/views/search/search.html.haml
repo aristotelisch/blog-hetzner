@@ -1,0 +1,15 @@
+%h1 Articles Search
+
+= form_for search_path, method: :get do |f|
+  %p
+    = f.label "Search for"
+    = text_field_tag :query, params[:query]
+    = submit_tag "Go", name: nil
+
+
+%ul
+  - @articles.each do |article|
+    %li
+      %h3
+        = link_to article.title, article_path(article.id)
+
