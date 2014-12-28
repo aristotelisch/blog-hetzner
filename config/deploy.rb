@@ -49,9 +49,15 @@ after  "deploy:update_code", "db:symlink"
 before "deploy:assets:precompile", "db:symlink"
 after  "db:symlink", "db:symlink_application_yml"
 after  "db:symlink", "db:create"
+after  "db:symlink", "db:elasticsearch_update"
 
 
 namespace :db do
+  desc "Update elasticsearch"
+  task :elasticsearch_update do
+    run "cd #{deploy_to}/current && RAILS_ENV=production bundle exec rake environment elasticsearch:import:all"
+  end
+
   desc "Create database yaml in shared path"
   task :configure, :roles => :app do
     set :database_username do
