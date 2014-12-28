@@ -18,6 +18,7 @@
 .env
 /config/database.yml
 dump.rdb
+/tls
 
 # Ignore application configuration
 /config/application.yml
