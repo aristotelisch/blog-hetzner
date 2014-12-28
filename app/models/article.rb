@@ -13,21 +13,17 @@ class Article < ActiveRecord::Base
 
   default_scope { order("created_at DESC") }
   before_save :make_excerpt
-  before_update :make_excerpt
 
   settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do
       indexes :title, analyzer: 'english'
       indexes :body, analyzer: 'english'
+      indexes :draft
     end
   end
 
   def make_excerpt
-    if self.excerpt.blank?
-      self.update_attributes(excerpt: self.body.slice(0,400))
-    else
-      self.excerpt
-    end
+    self.excerpt = self.body.slice(0,400)
   end
 
   def self.search(query)
@@ -43,6 +39,7 @@ class Article < ActiveRecord::Base
     )
   end
 end
+
 # Delete the previous articles index in Elasticsearch
 Article.__elasticsearch__.client.indices.delete index: Article.index_name rescue nil
  
