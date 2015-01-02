@@ -21,5 +21,6 @@ module Blog
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.initialize_on_precompile = false
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
