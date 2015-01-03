@@ -1,0 +1,7 @@
+<div id="status" class="pull-right">
+  <% unless @article.draft %>
+    <span class="label label-primary">Published</span>
+  <% else %>
+    <span class="label label-default">Draft</span>
+  <% end %>
+</div>

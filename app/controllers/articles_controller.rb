@@ -48,12 +48,12 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    logger.debug "params[:draft_button]= #{params[:draft_button]}"
+    #logger.debug "params[:draft_button]= #{params[:draft_button]}"
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to edit_article_path(@article),
                       notice: 'Article was successfully updated.' }
-        format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @article.errors, status: :unprocessable_entity }

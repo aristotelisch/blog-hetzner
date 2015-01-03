@@ -1,0 +1,6 @@
+$('#status').find('span').remove();
+<% unless @article.draft %>
+  $('#status').append('<span class="label label-primary">Published</span>');
+<% else %>
+  $('#status').append('<span class="label label-default">Draft</span>');
+<% end %>
