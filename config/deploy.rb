@@ -55,7 +55,7 @@ after  "db:symlink", "db:elasticsearch_update"
 namespace :db do
   desc "Update elasticsearch"
   task :elasticsearch_update do
-    run "cd #{deploy_to}/current && RAILS_ENV=production bundle exec rake environment elasticsearch:import:all"
+    run "cd #{latest_release} && RAILS_ENV=production bundle exec rake environment elasticsearch:import:all"
   end
 
   desc "Create database yaml in shared path"
