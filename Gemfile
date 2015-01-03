@@ -39,6 +39,7 @@ group :test do
 end
 
 group :development, :test do
+  # gem 'mailcatcher', '~> 0.5.12'
   gem 'guard-foreman'
   gem 'rspec-rails'
   gem 'capybara'
