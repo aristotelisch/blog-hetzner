@@ -159,6 +159,11 @@ namespace :admin do
     upload(File.expand_path('../application.yml', __FILE__), "#{shared_path}/config/application.yml")
     run "ln -nfs #{shared_path}/config/application.yml #{latest_release}/config/application.yml"
   end
+
+  desc "Clearing cache"
+  task :cache_clear do
+    run "RAILS_ENV=production bundle exec rake cache:clear"
+  end
 end
 
 
