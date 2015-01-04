@@ -36,4 +36,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  # Setup mail testing with letter opener. Saves emails at tmp/letter_opener
+  config.action_mailer.delivery_method = :letter_opener
 end
