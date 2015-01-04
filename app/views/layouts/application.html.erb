@@ -12,16 +12,16 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
     <%= csrf_meta_tags %>
-    <%= render 'shared/google_analytics' %>
+    <%= raw render 'shared/google_analytics' %>
   </head>
   <body>
     <div id="wrap">
-      <%= render 'header' %>
+      <%= render 'layouts/header' %>
       <div class="container">
         <%= render 'layouts/flash_messages' %>
         <%= yield %>
       </div>
     </div> <!--/#wrap -->
-    <%= render 'footer' %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
