@@ -4,6 +4,7 @@ class Article < ActiveRecord::Base
   include FriendlyId
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
+  mount_uploader :featured_image, FeatureImageUploader
 
   belongs_to :user
 

@@ -61,6 +61,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
@@ -230,6 +235,7 @@ GEM
     redis-session-store (0.8.0)
       actionpack (>= 3, < 5)
       redis
+    rmagick (2.13.4)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -309,6 +315,7 @@ DEPENDENCIES
   capistrano (~> 2.15)
   capistrano-rails
   capybara
+  carrierwave
   coffee-rails (~> 4.0.0)
   elasticsearch-model
   elasticsearch-rails
@@ -335,6 +342,7 @@ DEPENDENCIES
   rb-fsevent
   redcarpet
   redis-session-store
+  rmagick
   rspec-rails
   rvm-capistrano
   sass-rails

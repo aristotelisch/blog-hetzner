@@ -16,6 +16,7 @@ gem 'sass-rails'
 gem 'newrelic_rpm'
 gem 'bcrypt'
 gem 'redis-session-store'
+gem 'carrierwave'
 
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
@@ -61,6 +62,8 @@ group :development, :test do
   gem 'foreman'
 #   gem 'passenger'
 end
+
+gem 'rmagick'
 
 gem 'capistrano', '~> 2.15', group: :development
 gem 'capistrano-rails'

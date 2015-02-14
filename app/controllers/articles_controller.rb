@@ -79,7 +79,7 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      article = params.require(:article).permit(:title, :body, :user_id)
+      article = params.require(:article).permit(:title, :body, :featured_image, :user_id)
       if params[:draft_button]
         article[:draft] = true
       else

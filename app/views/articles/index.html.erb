@@ -6,6 +6,9 @@
       <article>
       <header>
         <h1><%= link_to article.title, article %></h1>
+        <div class="featured-image">
+          <%= image_tag article.featured_image.url(:thumb) if article.featured_image.present? %>
+        </div>
         <p>Published: <time pubdate="pubdate"><%= article.updated_at.to_formatted_s(:short) %></time> by <%= article.user.username %></p>
         <p>
           <% if current_user %>
