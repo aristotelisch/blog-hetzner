@@ -22,3 +22,6 @@ dump.rdb
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore .idea folder
+.idea/
