@@ -25,3 +25,6 @@ dump.rdb
 
 # Ignore .idea folder
 .idea/
+
+# Ignore public folder uploads
+/public/uploads/
