@@ -2,11 +2,13 @@ ruby "2.2.0"
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
+gem 'passenger'
 
-gem 'mysql2'
+gem 'pg'
 
 gem 'haml'
 
+gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -60,10 +62,11 @@ group :development, :test do
   gem "binding_of_caller"
   gem 'meta_request'
   gem 'foreman'
+  gem 'quiet_assets'
 #   gem 'passenger'
 end
 
-gem 'rmagick'
+gem 'mini_magick'
 
 gem 'capistrano', '~> 2.15', group: :development
 gem 'capistrano-rails'
