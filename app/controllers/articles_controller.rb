@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     if signed_in?
       @articles = Article.all
     else
-      @articles = Article.where('draft = false')
+      @articles = Article.where(draft: 'false')
     end
   end
 
