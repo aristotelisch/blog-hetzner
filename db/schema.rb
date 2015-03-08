@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150120204105) do
+ActiveRecord::Schema.define(version: 20150308162804) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150120204105) do
     t.integer  "user_id"
     t.string   "slug"
     t.text     "excerpt"
-    t.boolean  "draft"
+    t.boolean  "draft",          default: true
     t.string   "featured_image"
   end
 
