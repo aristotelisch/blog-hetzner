@@ -3,7 +3,7 @@
   <%= render 'status' %>
 </div>
 
-<%= form_for @article, role: "form", remote: true do |f| %>
+<%= form_for @article, html: { multipart: true }, role: "form" do |f| %>
   <%= render 'form', f: f %>
 <% end %>
 

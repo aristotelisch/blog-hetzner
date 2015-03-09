@@ -10,6 +10,7 @@ set :deploy_to, '/u/apps/blog'
 
 # Use agent forwarding for SSH so you can deploy with the SSH key on your workstation.
 set :ssh_options, {
+  port: 56,
   forward_agent: true
 }
 
