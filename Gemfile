@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
 gem 'passenger'
+gem 'dalli'
 
 group :production do
   gem 'mysql2'
