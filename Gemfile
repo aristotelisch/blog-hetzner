@@ -69,10 +69,12 @@ group :development, :test do
 #   gem 'passenger'
 end
 
-gem 'mini_magick'
+# gem 'mini_magick'
+gem 'rmagick', :require => 'RMagick'
 
 gem 'capistrano', '~> 3.3.5'
 gem 'capistrano-rails', '~> 1.1.2'
+gem 'capistrano-rails-console'
 # gem 'unicorn'
 # gem 'passenger'
 # gem 'rails_serve_static_assets'
