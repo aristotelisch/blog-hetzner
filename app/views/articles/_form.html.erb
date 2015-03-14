@@ -18,12 +18,13 @@
   <%= f.label :body %><br>
   <%= f.text_area :body, class: "form-control", rows: "10" %>
 </div>
-<div class="form-group">
+<div class="form-group pull-left">
   <%= f.label :featured_image %><br>
-  <%= f.file_field :featured_image, class: "form-control" %>
+  <%= f.file_field :featured_image %>
+  <%= image_tag @article.featured_image.url(:thumb) if @article.featured_image.present? %>
 </div>
-<%= f.hidden_field :user_id, { :value => @article.user_id } %>
-<div class="actions">
+<%= f.hidden_field :user_id, { value: @article.user_id } %>
+<div class="actions pull-right">
   <%= f.submit "Publish", class: "btn btn-primary" %>
   <%= f.submit "Make Draft", name: :draft_button, class: "btn btn-secondary" %>
 

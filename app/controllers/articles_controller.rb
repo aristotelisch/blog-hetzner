@@ -7,9 +7,9 @@ class ArticlesController < ApplicationController
   def index
     current_user
     if signed_in?
-      @articles = Article.all
+      @articles = current_user.articles.all
     else
-      @articles = Article.where(draft: 'false')
+      @articles = Article.includes(:user).where(draft: 'false')
     end
   end
 
