@@ -16,10 +16,10 @@
         </li>
         <li><%= link_to 'New Article', new_article_path if current_user %></li>
         <li><%= render partial: "shared/search_form" %></li>
-        <li><!-- <a href="#about">About</a> --></li>
-        <li><!-- <a href="#contact">Contact</a> --></li>
+        <!-- <li><!&#45;&#45; <a href="#about">About</a> &#45;&#45;></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Contact', contact_path %></li>
         <% if current_user %>
           <li><span class="in-nav">Signed in as <%= current_user.username %></span></li>
           <li><%= link_to "Sign Out", logout_path, method: :delete if current_user  %></li>

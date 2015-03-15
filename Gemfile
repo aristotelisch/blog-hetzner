@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 gem 'passenger'
 gem 'dalli'
+gem 'simple_form'
 
 group :production do
   gem 'mysql2'
