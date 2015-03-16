@@ -28,3 +28,4 @@ dump.rdb
 
 # Ignore public folder uploads
 /public/uploads/
+.capistrano
