@@ -82,17 +82,17 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'happybit.eu' }
 
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'happybit.eu',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Setup for production - deliveries with sendmail, no errors railsed
-  config.action_mailer.delivery_method = :sendmail
-  # Defaults to:
-  # config.action_mailer.sendmail_settings = {
-  #   location: '/usr/sbin/sendmail',
-  #   arguments: '-i -t'
-  # }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = {from: 'telischristou@gmail.com'}
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
