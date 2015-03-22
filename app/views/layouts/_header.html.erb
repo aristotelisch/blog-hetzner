@@ -19,13 +19,29 @@
         <!-- <li><!&#45;&#45; <a href="#about">About</a> &#45;&#45;></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Contact', contact_path %></li>
+        <li>
+          <%= link_to 'Contact', contact_path %>
+        </li>
         <% if current_user %>
-          <li><span class="in-nav">Signed in as <%= current_user.username %></span></li>
-          <li><%= link_to "Sign Out", logout_path, method: :delete if current_user  %></li>
-        <% else %>
-          <li><%= link_to "Sign In", login_path, :'data-toggle' => "tooltip", :'title' => "Sign in with your email"  unless current_user   %></li>
-        <% end %>
+          <div class="dropdown signed-in">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              <%= link_to current_user.username, '#' %>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation">
+                <%= link_to "Sign Out",
+                  logout_path, role: 'menuitem',  method: :delete if current_user  %>
+              </li>
+            <% else %>
+              <li role="presentation">
+                <%= link_to "Sign In", login_path, role: 'menuitem',
+                  tabindex: '-1', :'data-toggle' => "tooltip",
+                  :'title' => "Sign in with your email"  unless current_user %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
