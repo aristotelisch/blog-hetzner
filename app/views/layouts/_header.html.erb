@@ -1,47 +1,47 @@
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to "Happybit Blog", root_path, class: "navbar-brand" %>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-        </li>
-        <li><%= link_to 'New Article', new_article_path if current_user %></li>
-        <li><%= render partial: "shared/search_form" %></li>
-        <!-- <li><!&#45;&#45; <a href="#about">About</a> &#45;&#45;></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to 'Contact', contact_path %>
-        </li>
-        <% if current_user %>
-          <div class="dropdown signed-in">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-              <%= link_to current_user.username, '#' %>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation">
-                <%= link_to "Sign Out",
-                  logout_path, role: 'menuitem',  method: :delete if current_user  %>
-              </li>
-            <% else %>
-              <li role="presentation">
-                <%= link_to "Sign In", login_path, role: 'menuitem',
-                  tabindex: '-1', :'data-toggle' => "tooltip",
-                  :'title' => "Sign in with your email"  unless current_user %>
-              </li>
-            <% end %>
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Happybit Blog", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+      </li>
+      <li><%= link_to 'New Article', new_article_path if current_user %></li>
+      <li><%= render partial: "shared/search_form" %></li>
+      <!-- <li><!&#45;&#45; <a href="#about">About</a> &#45;&#45;></li> -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <%= link_to 'Contact', contact_path %>
+      </li>
+      <% if current_user %>
+        <div class="dropdown signed-in">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            <%= link_to current_user.username, '#' %>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation">
+              <%= link_to "Sign Out",
+                logout_path, role: 'menuitem',  method: :delete if current_user  %>
+            </li>
           </ul>
         </div>
+        <% else %>
+          <li role="presentation">
+            <%= link_to "Sign In", login_path, role: 'menuitem',
+              tabindex: '-1', :'data-toggle' => "tooltip",
+              :'title' => "Sign in with your email"  unless current_user %>
+          </li>
+        <% end %>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
