@@ -31,9 +31,17 @@ class Article < ActiveRecord::Base
     __elasticsearch__.search(
       {
         query: {
-          multi_match: {
-            query: query,
-            fields: ['title^10', 'body']
+          filtered: {
+            query: {
+              query_string: {
+                query: query
+              }
+            },
+            filter: {
+              term: {
+                draft: false
+              }
+            }
           }
         }
       }
