@@ -6,10 +6,12 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     current_user
+    params[:page] ||= 1
+
     if signed_in?
-      @articles = current_user.articles.all
+      @articles = current_user.articles.page params[:page]
     else
-      @articles = Article.includes(:user).where(draft: 'false')
+      @articles = Article.includes(:user).where(draft: 'false').page params[:page]
     end
   end
 
