@@ -1,7 +1,7 @@
 ruby "2.1.5"
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.4'
 gem 'passenger'
 gem 'dalli'
 gem 'simple_form'
@@ -10,7 +10,7 @@ group :production do
   gem 'mysql2'
 end
 
-gem 'haml'
+gem 'haml-rails'
 gem 'kaminari'
 
 # gem 'rails_12factor'
