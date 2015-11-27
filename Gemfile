@@ -1,7 +1,7 @@
 ruby "2.1.5"
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5'
 gem 'passenger'
 gem 'dalli'
 gem 'simple_form'
