@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.5'
-gem 'passenger'
 gem 'dalli'
 gem 'simple_form'
 
@@ -74,8 +73,6 @@ group :development, :test do
   gem 'meta_request'
   gem 'foreman'
   gem 'quiet_assets'
-  gem 'sqlite3'
-#   gem 'passenger'
 end
 
 # gem 'mini_magick'
