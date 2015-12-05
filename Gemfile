@@ -1,4 +1,3 @@
-ruby "2.1.5"
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.5'
@@ -40,6 +39,13 @@ gem "figaro"
 gem "high_voltage"
 
 group :development do
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-rails', '~> 1.1.2'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-db-tasks', require: false
 end
 
 group :test do
@@ -75,9 +81,7 @@ end
 # gem 'mini_magick'
 gem 'rmagick', :require => 'RMagick'
 
-gem 'capistrano', '~> 3.3.5'
-gem 'capistrano-rails', '~> 1.1.2'
-gem 'capistrano-rails-console'
+
 # gem 'unicorn'
 # gem 'passenger'
 # gem 'rails_serve_static_assets'
