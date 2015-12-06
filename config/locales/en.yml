@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  contacts:
+    new:
+      contact: Contact
+      please_verify_you_are_not_a_robot: 'Please verify that you are not a robot'

@@ -210,6 +210,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     pygments.rb (0.6.0)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -250,6 +252,8 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
+    recaptcha (1.0.2)
+      json
     redcarpet (3.2.0)
     redis (3.1.0)
     redis-session-store (0.8.0)
@@ -373,10 +377,12 @@ DEPENDENCIES
   meta_request
   mysql2
   newrelic_rpm
+  pry-rails
   pygments.rb
   quiet_assets
   rails (= 4.2.5)
   rb-fsevent
+  recaptcha
   redcarpet
   redis-session-store
   rmagick

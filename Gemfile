@@ -51,6 +51,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'letter_opener'
   gem 'guard-foreman'
   gem 'rspec-rails'
@@ -75,7 +76,8 @@ group :development, :test do
 end
 
 # gem 'mini_magick'
-gem 'rmagick', :require => 'RMagick'
+gem 'rmagick', :require => 'rmagick'
+gem "recaptcha", require: "recaptcha/rails"
 
 
 # gem 'unicorn'
