@@ -21,6 +21,10 @@
 <div class="form-group pull-left">
   <%= f.label :featured_image %><br>
   <%= f.file_field :featured_image %>
+  <% if @article.featured_image.present? %>
+    <%= f.label :remove_featured_image %>
+    <%= f.check_box :remove_featured_image %><br>
+  <% end %>
   <%= image_tag @article.featured_image.url(:thumb) if @article.featured_image.present? %>
 </div>
 <%= f.hidden_field :user_id, { value: @article.user_id } %>

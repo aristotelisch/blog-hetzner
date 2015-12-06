@@ -5,9 +5,7 @@ gem 'rails', '4.2.5'
 gem 'dalli'
 gem 'simple_form'
 
-group :production do
-  gem 'mysql2'
-end
+gem 'mysql2'
 
 gem 'haml-rails'
 gem 'kaminari'

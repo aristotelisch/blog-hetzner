@@ -14,29 +14,29 @@
 ActiveRecord::Schema.define(version: 20150308162804) do
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
+    t.string   "title",          limit: 255
+    t.text     "body",           limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
-    t.string   "slug"
-    t.text     "excerpt"
-    t.boolean  "draft",          default: true
-    t.string   "featured_image"
+    t.integer  "user_id",        limit: 4
+    t.string   "slug",           limit: 255
+    t.text     "excerpt",        limit: 65535
+    t.boolean  "draft",                        default: true
+    t.string   "featured_image", limit: 255
   end
 
-  add_index "articles", ["draft"], name: "index_articles_on_draft"
-  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
-  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
+  add_index "articles", ["draft"], name: "index_articles_on_draft", using: :btree
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "firstname"
-    t.string   "lastname"
+    t.string   "username",        limit: 255
+    t.string   "email",           limit: 255
+    t.string   "firstname",       limit: 255
+    t.string   "lastname",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
+    t.string   "password_digest", limit: 255
   end
 
 end
