@@ -5,3 +5,11 @@ development:
   password:
   host: localhost
   port: 3306
+
+test:
+  adapter: mysql2
+  database: blog_test
+  username: root
+  password:
+  host: localhost
+  port: 3306
