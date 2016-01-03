@@ -78,6 +78,7 @@ end
 # gem 'mini_magick'
 gem 'rmagick', :require => 'rmagick'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'airbrake', '~> 5.0'
 
 
 # gem 'unicorn'
